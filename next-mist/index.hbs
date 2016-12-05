@@ -1,6 +1,8 @@
 {{!< default}}
  <div class="content-wrap">
      <div id="content" class="content">
+       <section id="search-results" class="search-results">
+       </section>
          <section id="posts" class="posts-expand">
              {{#foreach posts}}
                  <article class="post posts-type-normal">
@@ -60,27 +62,7 @@
  </aside>
  <script type="text/javascript">
      $(".ds-thread-count").each(function(){
-         var apiUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=" + duoshuo_name + "&threads=" + $(this).attr("data-thread-key")  + "&callback=?";
          var currentObj = $(this);
-         var test = $.getJSON(apiUrl, function(data){
-             //console.log(data.response[0].comments);
-             //console.log(currentObj);
-             var id = currentObj.attr("data-thread-key");
-             //console.log(id);
-             var commentNumber = data.response[id].comments;
-             //console.log(commentNumber);
-             if(commentNumber == "0") {
-                 $(currentObj).html("暂无评论");
-             }else {
-                 $(currentObj).html(commentNumber + "条评论")
-             }
-         });
-
-         //console.log(test);
-
-
-
+         $(currentObj).html('<a class="commentNumber" href="{{url}}#disqus_thread">Comments</a>');
      });
-
-
  </script>

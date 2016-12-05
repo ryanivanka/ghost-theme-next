@@ -45,26 +45,7 @@
                 </article>
             </div>
         </div>
-        <div class="comments" id="comments">
-            <!-- 页面绑定 - 请勿改动 -->
-            <div class="ds-thread" data-thread-key="{{id}}" data-title="{{title}}" data-url="{{url absolute="true"}}"></div>
-            <!-- 结束绑定 -->
-
-            <!-- 不必修改下述代码，在head inject中添加配置即可 -->
-            <script type="text/javascript">
-                var duoshuoQuery = {short_name:duoshuo_name};
-                (function() {
-                    var ds = document.createElement('script');
-                    ds.type = 'text/javascript';ds.async = true;
-                    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-                    ds.charset = 'UTF-8';
-                    (document.getElementsByTagName('head')[0]
-                    || document.getElementsByTagName('body')[0]).appendChild(ds);
-                })();
-            </script>
-            <!-- 结束替换位置 -->
-
-        </div>
+        {{> comments}}
     </div>
 {{/post}}
 <div class="sidebar-toggle">

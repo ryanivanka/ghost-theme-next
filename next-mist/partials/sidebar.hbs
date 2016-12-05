@@ -40,8 +40,15 @@
                 </div>-->
             </nav>
             <div class="feed-link motion-element" >
-                <a href="/rss" rel="alternate"><i class="fa fa-rss"></i>RSS</a>
+                <!-- <a href="/rss" rel="alternate"><i class="fa fa-rss"></i>RSS</a> -->
+                            {{#if @labs.subscribers}}
+                                <a class="subscribe-button" rel="alternate" href="{{@blog.url}}/subscribe/"><i class="fa fa-rss"></i>Subscribe</a>
+                            {{else}}
+                                <a class="subscribe-button icon-feed" rel="alternate" href="{{@blog.url}}/rss/"><i class="fa fa-rss"></i>RSS</a>
+                            {{/if}}
             </div>
+
+
             <div class="links-of-author motion-element" >
             </div>
             <div class="links-of-author motion-element" id="site-links">
